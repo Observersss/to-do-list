@@ -1,0 +1,23 @@
+.MyModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(36, 36, 36, 0.66);
+    opacity: 0;
+    pointer-events: none;
+}
+.MyModal.MyModal__active{
+    opacity: 1;
+    pointer-events: all;
+}
+.MyModal__content{
+    min-width: 200px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,23 @@
+.navbar{
+    width: 100%;
+    height: 5em;
+    background-color: rgba(0, 128, 128, 0.58);
+    display: flex;
+}
+.navbar__left__content{
+    width: 49%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.navbar__right__content{
+    width: 49%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar__left__content *, .navbar__right__content *{
+    margin: 1.5em;
+}

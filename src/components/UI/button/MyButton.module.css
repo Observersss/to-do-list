@@ -1,0 +1,12 @@
+.Mybtn{
+    background-color: teal;
+    border: 1px solid teal;
+    border-radius: 12px;
+    padding: 5px 15px;
+    font-size: 17px;
+    transition: background-color 500ms;
+}
+.Mybtn:hover{
+    background-color: rgb(255, 165, 0);
+    cursor: pointer;
+}

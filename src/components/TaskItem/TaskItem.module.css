@@ -1,0 +1,11 @@
+.task{
+    border:2px solid teal;
+    border-radius: 1em;
+    padding: 1.5em;
+    margin: 1em;
+    transition: border 500ms;
+}
+.task:hover{
+    border:2px solid orange;
+    cursor: pointer;
+}
