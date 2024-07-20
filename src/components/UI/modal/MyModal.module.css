@@ -16,8 +16,11 @@
     pointer-events: all;
 }
 .MyModal__content{
-    min-width: 200px;
-    min-height: 200px;
+    min-width: 400px;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    border-radius: 14px;
+    color: black;
 }

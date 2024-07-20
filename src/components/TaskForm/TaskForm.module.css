@@ -1,0 +1,14 @@
+.taskForm{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1em;
+}
+.taskForm div {
+    display: flex;
+    margin: 0.4em;
+}
+.taskForm div *{
+    width: 50%;
+    margin: 0.2em;
+}
