@@ -3,9 +3,48 @@
     border-radius: 1em;
     padding: 1.5em;
     margin: 1em;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 800px;
+    overflow: hidden;
     transition: border 500ms;
 }
 .task:hover{
     border:2px solid orange;
     cursor: pointer;
+}
+.task__content{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+/*.task__option{*/
+/*    width: 30%;*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*    align-items: end;*/
+/*    padding-left: 1em;*/
+/*}*/
+/*.task__option * {*/
+/*    margin-right: 0.2em;*/
+/*}*/
+.complexity{
+    display: flex;
+    justify-content: center;
+}
+.task__option__content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 30%;
+}
+.task_option__button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+.task_option__button *:first-of-type {
+    margin-right: 0.5rem;
 }

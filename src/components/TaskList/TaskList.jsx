@@ -1,12 +1,11 @@
 import React from 'react';
 import TaskItem from "../TaskItem/TaskItem.jsx";
-import MyButton from "../UI/button/MyButton.jsx";
 
-const TaskList = ({tasks}) => {
+const TaskList = ({openChangeModalTask,remove,tasks}) => {
     return (
         <div>
             {tasks.map((task, index) =>
-                <TaskItem key={task.id} task={task} number={index + 1}/>
+                <TaskItem openChangeModalTask={openChangeModalTask} remove={remove} key={task.id} task={task} number={index + 1}/>
             )}
         </div>
     );

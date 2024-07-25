@@ -7,17 +7,34 @@ import MyModal from "./components/UI/modal/MyModal.jsx";
 import TaskForm from "./components/TaskForm/TaskForm.jsx";
 
 function App() {
-    let [tasks,setTasks] = useState( [
-        {id:1,title:"Start:",body:"You can add/remove/complete/change yours task.\n" +
-                "                        Click on this task for open menu"},
-        {id:2,title:"Cleaning",body: "Need clean my table"},
+    const [tasks,setTasks] = useState( [
+        {id:1,title:"Start:",body:"You can add/remove/change yours task.", complexity:1},
+        {id:2,title:"Cleaning",body: "Need clean my table",complexity:3},
     ]);
     const [modal, setModal] = useState(false);
+    const [currentTask, setCurrentTast] = useState(null);
 
     const createTask = (newTask) => {
         setTasks([...tasks,newTask]);
         setModal(false);
     };
+    const removeTask = (newTask) => {
+        setTasks(tasks.filter(task => task.id !== newTask.id));
+    }
+    const openChangeModalTask = (task) => {
+        setCurrentTast(task);
+        setModal(true);
+    }
+    const changeTask = (newTask) => {
+        setTasks(tasks.map(task => {
+            if (task.id === newTask.id){
+                return {...newTask}
+            }
+            return task;
+        }));
+        setCurrentTast(null);
+        setModal(false)
+    }
 
   return (
       <>
@@ -27,9 +44,17 @@ function App() {
               <MyButton onClick={() => setModal(true)}>Add task</MyButton>
           </div>
           <MyModal visible={modal} setVisible={setModal}>
-              <TaskForm create={createTask}/>
+              <TaskForm
+                  create={createTask}
+                  change={changeTask}
+                  currentTask={currentTask}
+              />
           </MyModal>
-          <TaskList tasks={tasks} title={"Your tasks:"}/>
+          <TaskList
+              openChangeModalTask={openChangeModalTask}
+              remove={removeTask}
+              tasks={tasks}
+          />
       </>
   )
 }

@@ -1,0 +1,23 @@
+.complexity__content{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.complexity__content__item__1,.complexity__content__item__2,
+.complexity__content__item__3{
+    width: 0.3em;
+    min-height: 0.7em;
+    background-color: teal;
+    margin-right: 0.4em;
+}
+.complexity__content__item__1{
+}
+.complexity__content__item__2{
+    height: 0.9em;
+}
+.complexity__content__item__3{
+    height: 1.1em;
+}
+.complexity__content__item__ACTIVE{
+    background-color: orange !important;
+}
