@@ -1,0 +1,8 @@
+.MySelect{
+    border-radius: 14px;
+    padding: 10px;
+    border: 2px solid teal;
+    font-size: 14px;
+    min-width: 200px;
+    margin: 0 10px;
+}

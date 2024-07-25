@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from "./TaskItem.module.css";
 import MyButton from "../UI/button/MyButton.jsx";
-import ComplexityTask from "../../ComplextityTask/ComplexityTask.jsx";
+import ComplexityTask from "../ComplextityTask/ComplexityTask.jsx";
 
 const TaskItem = (props) => {
     return (

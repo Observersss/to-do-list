@@ -5,6 +5,9 @@ import React, {useState} from "react";
 import MyButton from "./components/UI/button/MyButton.jsx";
 import MyModal from "./components/UI/modal/MyModal.jsx";
 import TaskForm from "./components/TaskForm/TaskForm.jsx";
+import {useTasks} from "./components/hooks/useTasks.js";
+import MyInput from "./components/UI/input/MyInput.jsx";
+import TaskFilter from "./components/TaskFilter/TaskFilter.jsx";
 
 function App() {
     const [tasks,setTasks] = useState( [
@@ -13,6 +16,8 @@ function App() {
     ]);
     const [modal, setModal] = useState(false);
     const [currentTask, setCurrentTast] = useState(null);
+    const [filter,setFilter] = useState({sort:'',query:''});
+    const sortedAndSearchedTasks = useTasks(tasks,filter.sort,filter.query);
 
     const createTask = (newTask) => {
         setTasks([...tasks,newTask]);
@@ -39,9 +44,13 @@ function App() {
   return (
       <>
           <Navbar/>
-          <div style={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>
-              <h1 style={{margin: "1em"}}>Yours task:</h1>
-              <MyButton onClick={() => setModal(true)}>Add task</MyButton>
+          <div style={{display: "flex",flexDirection:'column', justifyContent: "space-evenly", alignItems: "center"}}>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                  <h1 style={{margin: "1em"}}>Yours task:</h1>
+                  <MyButton onClick={() => setModal(true)}>Add task</MyButton>
+              </div>
+
+              <TaskFilter filter={filter} setFilter={setFilter}/>
           </div>
           <MyModal visible={modal} setVisible={setModal}>
               <TaskForm
@@ -53,7 +62,7 @@ function App() {
           <TaskList
               openChangeModalTask={openChangeModalTask}
               remove={removeTask}
-              tasks={tasks}
+              tasks={sortedAndSearchedTasks}
           />
       </>
   )
