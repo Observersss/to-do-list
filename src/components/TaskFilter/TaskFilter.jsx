@@ -17,7 +17,8 @@ const TaskFilter = ({filter,setFilter}) => {
                 options={[
                     {value:'title',name:"By title"},
                     {value:'body',name:'By body'},
-                    {value:'complexity',name:"By complexity"}
+                    {value:'complexityMin',name:"By complexity (min)"},
+                    {value:'complexityMax',name:"By complexity (max)"},
                 ]}
             />
         </div>

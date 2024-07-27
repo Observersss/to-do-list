@@ -62,8 +62,7 @@ const TaskForm = ({create,currentTask,change}) => {
                     value={task.complexity}
                     type={"number"}
                     min={0}
-                    max={3}
-                    maxLenght={1}
+                    maxLength={3}
                     onChange={e => setTask({...task,complexity: Number(e.target.value)})}
                 />
             </div>

@@ -8,6 +8,10 @@ const useSortedTasks = (tasks, sort) => {
                     return a[sort].localeCompare(b[sort]);
                 } else if (typeof a[sort] === 'number' && typeof b[sort] === 'number') {
                     return b[sort] - a[sort];
+                } else if(sort === 'complexityMin') {
+                    return a.complexity - b.complexity;
+                } else if(sort === 'complexityMax') {
+                    return  b.complexity - a.complexity;
                 } else {
                     return 0;
                 }
