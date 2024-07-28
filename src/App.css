@@ -16,14 +16,21 @@
   align-items: center;
   padding: 20px;
 }
+.container__content{
+  display: flex;
+  align-items: center;
+}
+.container__content * {
+  width: 49%;
+}
 
 .container__for__images{
   display: flex;
   flex-direction: column;
 }
 .image-container {
-  width: 300px;
-  height: 150px;
+  width: 600px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
